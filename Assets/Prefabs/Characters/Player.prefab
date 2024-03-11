@@ -81,7 +81,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2249075868015281708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 9dcea2a2ce342b44c92d6d076386f12f, type: 2}
+  clothingSprite: {fileID: 0}
 --- !u!1 &9002561181115124874
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class PlayerController : Player
 
     public static Action OnPlayerInteract;
 
+    public Vector3 Movement { get => movement; }
+
     private void OnEnable()
     {
         playerControls.Enable();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
-    private bool isInRange = false;
+    protected bool isInRange = false;
 
     private void OnEnable()
     {
@@ -34,7 +34,7 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    private void Interact()
+    public virtual void Interact()
     {
         if (isInRange)
         {

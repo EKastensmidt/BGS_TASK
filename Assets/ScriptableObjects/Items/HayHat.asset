@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050a4414b74bcf74ebd82b6e98165ff6, type: 3}
+  m_Name: HayHat
+  m_EditorClassIdentifier: 
+  itemName: HayHat
+  itemPrice: 20
+  itemImage: {fileID: -1412016965, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
+  prefab: {fileID: 8158774995943648045, guid: 71d2dfd28db3f5447b91bb8ca7604a1e, type: 3}
