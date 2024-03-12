@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HayHat
   m_EditorClassIdentifier: 
   itemName: HayHat
-  itemPrice: 20
+  itemPrice: 40
   itemImage: {fileID: -1412016965, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 71d2dfd28db3f5447b91bb8ca7604a1e, type: 3}

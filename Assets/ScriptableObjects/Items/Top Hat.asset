@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Top Hat
   m_EditorClassIdentifier: 
   itemName: Top Hat
-  itemPrice: 30
+  itemPrice: 9999
   itemImage: {fileID: 443735469, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: da34fe02730fe2749a42a44def668717, type: 3}

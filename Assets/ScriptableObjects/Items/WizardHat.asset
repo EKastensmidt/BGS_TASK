@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WizardHat
   m_EditorClassIdentifier: 
   itemName: Wizard Hat
-  itemPrice: 40
+  itemPrice: 100
   itemImage: {fileID: 190955846, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 11fc0717ffadcca4d80ae7494eebfe79, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CottonHat
   m_EditorClassIdentifier: 
   itemName: Cotton Hat
-  itemPrice: 25
+  itemPrice: 5
   itemImage: {fileID: 95590555, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 5093dd7d440d9dc4a973dc36f832ae70, type: 3}

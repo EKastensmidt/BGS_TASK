@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CowboyHat
   m_EditorClassIdentifier: 
   itemName: Cowboy Hat
-  itemPrice: 15
+  itemPrice: 55
   itemImage: {fileID: -1891694071, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: fb2bbdbb9cb7f5a4dbd1f6c4c69f5c92, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SantaHat
   m_EditorClassIdentifier: 
   itemName: Santa Hat
-  itemPrice: 5
+  itemPrice: 10
   itemImage: {fileID: 593963359, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 9ac4b247a34fd3b4b98c9e94b53bbb61, type: 3}

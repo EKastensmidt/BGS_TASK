@@ -31,7 +31,7 @@ public class NPCSlot : MonoBehaviour
     {
         if (player.GetMoney() < item.ItemPrice)
         {
-            //NO MONEY EVENT?
+            //EVENT FOR NO MONEY?
         }
         else
         {

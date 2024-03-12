@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
-    protected bool isInRange = false;
-
     private void OnEnable()
     {
         PlayerController.OnPlayerInteract += Interact;
@@ -16,12 +15,16 @@ public class InteractableObject : MonoBehaviour
         PlayerController.OnPlayerInteract -= Interact;
     }
 
+    public virtual void Start()
+    {
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Player player))
         {
             player.SetInteractability(true);
-            isInRange = true;
         }
     }
 
@@ -30,15 +33,22 @@ public class InteractableObject : MonoBehaviour
         if (collision.TryGetComponent(out Player player))
         {
             player.SetInteractability(false);
-            isInRange = false;
+            OnInteractionEnd();
         }
     }
 
     public virtual void Interact()
     {
-        if (isInRange)
-        {
-            
-        }
+        
+    }
+
+    public virtual void OnInteractionEnd()
+    {
+
+    }
+
+    public virtual void OnTriggerStay2D(Collider2D collision)
+    {
+        
     }
 }
