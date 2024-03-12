@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer clothingSprite;
 
     protected bool isReadyToInteract = false;
-    private int money = 5;
+    private int money;
     public PlayerStats Stats { get => stats; set => stats = value; }
 
     public virtual void Start()
     {
-        
+        money = stats.StartingMoney;
     }
 
     public virtual void Update()

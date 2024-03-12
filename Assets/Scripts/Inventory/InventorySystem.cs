@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    public static Action OnUpdateInventory;
+
     private Dictionary<ShopItem, InventoryItem> itemDictionary;
     public List<InventoryItem> inventory { get; private set; }
 
@@ -25,6 +28,7 @@ public class InventorySystem : MonoBehaviour
             inventory.Add(newItem);
             itemDictionary.Add(referenceData, newItem);
         }
+        OnUpdateInventory?.Invoke();
     }
 
     public void Remove(ShopItem referenceData)
@@ -38,6 +42,7 @@ public class InventorySystem : MonoBehaviour
                 itemDictionary.Remove(referenceData);
             }
         }
+        OnUpdateInventory?.Invoke();
     }
 
     public InventoryItem Get(ShopItem referenceData)
