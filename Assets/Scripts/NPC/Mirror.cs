@@ -24,6 +24,7 @@ public class Mirror : InteractableObject, IInteractable
             return;
 
         base.Interact();
+
         equipMenu.SetActive(true);
         CheckInventory();
     }
@@ -31,23 +32,21 @@ public class Mirror : InteractableObject, IInteractable
     public override void OnInteractionEnd()
     {
         base.OnInteractionEnd();
+
+        DestroyItems();
         equipMenu.SetActive(false);
         CanInteract = false;
     }
 
     private void CheckInventory()
     {
-        foreach(ShopItem item in clothesList)
+        foreach(InventoryItem inventoryItem in inventorySystem.inventory)
         {
-            InventoryItem invItem = inventorySystem.Get(item);
-            if(invItem != null)
-            {
-                GameObject obj = Instantiate(itemPrefab);
-                obj.transform.SetParent(equipMenu.transform.GetChild(0), false);
+            GameObject obj = Instantiate(itemPrefab);
+            obj.transform.SetParent(equipMenu.transform.GetChild(0), false);
 
-                EquipmentItem equipment = obj.GetComponent<EquipmentItem>();
-                equipment.SetShopItem(invItem.data);
-            }
+            EquipmentItem equipment = obj.GetComponent<EquipmentItem>();
+            equipment.SetShopItem(inventoryItem.data);
         }
     }
 
@@ -56,6 +55,14 @@ public class Mirror : InteractableObject, IInteractable
         if (collision.TryGetComponent(out Player player))
         {
             CanInteract = true;
+        }
+    }
+
+    private void DestroyItems()
+    {
+        foreach(Transform t in equipMenu.transform.GetChild(0).transform)
+        {
+            Destroy(t.gameObject);
         }
     }
 }

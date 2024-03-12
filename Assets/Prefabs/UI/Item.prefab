@@ -394,9 +394,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NPCSlot, Assembly-CSharp
-        m_MethodName: BuyItem
+      - m_Target: {fileID: 7481447408585810770}
+        m_TargetAssemblyTypeName: EquipmentItem, Assembly-CSharp
+        m_MethodName: EquipButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

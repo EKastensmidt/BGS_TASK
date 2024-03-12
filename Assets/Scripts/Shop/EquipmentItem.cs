@@ -26,6 +26,7 @@ public class EquipmentItem : MonoBehaviour
 
     public void SetShopItem(ShopItem item)
     {
+        shopItem = item;
         itemImage.sprite = item.ItemImage;
         itemName.text = item.ItemName;
     }
