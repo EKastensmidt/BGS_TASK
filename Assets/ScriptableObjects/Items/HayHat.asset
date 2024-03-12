@@ -16,3 +16,5 @@ MonoBehaviour:
   itemPrice: 40
   itemImage: {fileID: -1412016965, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 71d2dfd28db3f5447b91bb8ca7604a1e, type: 3}
+  crushFlavourText: I'm liking farmers right now
+  nextItem: {fileID: 11400000, guid: 67f547334e51ce946a813165a3e6e488, type: 2}

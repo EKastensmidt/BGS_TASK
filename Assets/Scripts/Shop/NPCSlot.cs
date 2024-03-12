@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class NPCSlot : MonoBehaviour
 {
+    public static Action<ShopItem> OnItemPurchase;
 
     [SerializeField] private Image itemImage;
     [SerializeField] private TextMeshProUGUI itemName, itemPrice;
@@ -37,6 +38,7 @@ public class NPCSlot : MonoBehaviour
         {
             player.LooseMoney(item.ItemPrice);
             inventorySystem.Add(item);
+            OnItemPurchase?.Invoke(item);
             buyButton.interactable = false;
         }
     }

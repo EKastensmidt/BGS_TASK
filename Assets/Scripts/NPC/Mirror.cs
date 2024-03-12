@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class Mirror : InteractableObject, IInteractable
 {
     [SerializeField] private GameObject equipMenu;
     [SerializeField] private GameObject itemPrefab;
-    private InventorySystem inventorySystem;
 
+    private InventorySystem inventorySystem;
     public bool CanInteract { get; set; }
+
 
     public override void Start()
     {

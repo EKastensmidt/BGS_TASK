@@ -16,3 +16,5 @@ MonoBehaviour:
   itemPrice: 5
   itemImage: {fileID: 95590555, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 5093dd7d440d9dc4a973dc36f832ae70, type: 3}
+  crushFlavourText: Cotton Hats are the way to go!
+  nextItem: {fileID: 11400000, guid: 8f4decf607e70e245be7b7f120031301, type: 2}

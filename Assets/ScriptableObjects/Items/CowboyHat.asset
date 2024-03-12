@@ -16,3 +16,5 @@ MonoBehaviour:
   itemPrice: 55
   itemImage: {fileID: -1891694071, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: fb2bbdbb9cb7f5a4dbd1f6c4c69f5c92, type: 3}
+  crushFlavourText: OMG! cowboys are so good looking
+  nextItem: {fileID: 11400000, guid: 52040610872f1f34ea08a7f0f5ff6985, type: 2}

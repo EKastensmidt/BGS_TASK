@@ -16,3 +16,5 @@ MonoBehaviour:
   itemPrice: 20
   itemImage: {fileID: -1018660432, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 9517bfed76acbe342a53483f1bce5faf, type: 3}
+  crushFlavourText: Lepricons are kinda cute ngl
+  nextItem: {fileID: 11400000, guid: 81f86f2623ff6bf4b9700aa04026a2db, type: 2}

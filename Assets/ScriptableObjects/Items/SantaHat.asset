@@ -16,3 +16,5 @@ MonoBehaviour:
   itemPrice: 10
   itemImage: {fileID: 593963359, guid: e91d3e4ebaf491e489b63e22aa7f9ff7, type: 3}
   prefab: {fileID: 8158774995943648045, guid: 9ac4b247a34fd3b4b98c9e94b53bbb61, type: 3}
+  crushFlavourText: I really like christmass
+  nextItem: {fileID: 11400000, guid: eed0d4c21f65cbd4dbb7efcd595de6c9, type: 2}

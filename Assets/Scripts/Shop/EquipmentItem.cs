@@ -11,9 +11,10 @@ public class EquipmentItem : MonoBehaviour
 
     private Player player;
     private ShopItem shopItem;
+
     private void Start()
     {
-        player = FindObjectOfType<Player>();    
+        player = FindObjectOfType<Player>();  
     }
 
     public void EquipButton()

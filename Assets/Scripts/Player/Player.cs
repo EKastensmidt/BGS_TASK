@@ -16,11 +16,24 @@ public class Player : MonoBehaviour
     public PlayerStats Stats { get => stats; set => stats = value; }
 
     public ShopItem currentItem;
+    private CoolGuy coolGuy;
+
+    public virtual void OnEnable()
+    {
+        //NPCSlot.OnItemPurchase += CheckIfRightItem;
+    }
+
+    public virtual void OnDisable()
+    {
+        //NPCSlot.OnItemPurchase -= CheckIfRightItem;
+    }
 
     public virtual void Start()
     {
         money = stats.StartingMoney;
         OnMoneyChange?.Invoke(money);
+
+        coolGuy = FindObjectOfType<CoolGuy>();
     }
 
     public virtual void Update()
@@ -37,6 +50,8 @@ public class Player : MonoBehaviour
     {
         clothingSprite.sprite = item.ItemImage;
         currentItem = item;
+
+        CheckIfRightItem(item);
     }
 
     public void TryRemoveClothing(ShopItem item)
@@ -71,5 +86,13 @@ public class Player : MonoBehaviour
     public int GetMoney()
     {
         return money;
+    }
+
+    private void CheckIfRightItem(ShopItem item)
+    {
+        if(coolGuy.CurrentItem.ItemName == item.ItemName)
+        {
+            coolGuy.ChangeItem();
+        }   
     }
 }

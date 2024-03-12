@@ -8,6 +8,7 @@ public class Vase : InteractableObject, IInteractable
     [SerializeField] private int minMoney = 1;
     [SerializeField] private int maxMoney = 10;
 
+    bool wasMoneyCollected = false;
     Player player;
     public override void Start()
     {
@@ -16,12 +17,14 @@ public class Vase : InteractableObject, IInteractable
 
     public override void Interact()
     {
-        if (!CanInteract)
+        if (!CanInteract || wasMoneyCollected)
             return;
 
         base.Interact();
 
         GetRandomMoneyAmount();
+
+        wasMoneyCollected = true;
     }
 
     public override void OnInteractionEnd()

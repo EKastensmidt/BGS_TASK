@@ -14,13 +14,15 @@ public class PlayerController : Player
 
     public Vector3 Movement { get => movement; }
 
-    private void OnEnable()
+    public override void OnEnable()
     {
+        base.OnEnable();
         playerControls.Enable();
     }
 
-    private void OnDisable()
+    public override void OnDisable()
     {
+        base.OnDisable();
         playerControls.Disable();
 
     }
