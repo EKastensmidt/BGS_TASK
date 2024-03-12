@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
+    [SerializeField] private GameObject spriteIcon;
+
     private void OnEnable()
     {
         PlayerController.OnPlayerInteract += Interact;
@@ -24,6 +26,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
+            spriteIcon.SetActive(false);
             player.SetInteractability(true);
         }
     }
@@ -32,6 +35,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
+            spriteIcon.SetActive(true);
             player.SetInteractability(false);
             OnInteractionEnd();
         }

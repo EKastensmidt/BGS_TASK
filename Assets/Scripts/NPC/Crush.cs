@@ -18,12 +18,22 @@ public class Crush : InteractableObject, IInteractable
 
     public override void Interact()
     {
+        if (!CanInteract)
+        {
+            return;
+        }
+
         base.Interact();
+
+        dialog.text = coolGuy.CurrentItem.CrushFlavourText;
     }
 
     public override void OnInteractionEnd()
     {
         base.OnInteractionEnd();
+
+        dialog.text = "";
+        CanInteract = false;
     }
 
     public override void OnTriggerStay2D(Collider2D collision)
