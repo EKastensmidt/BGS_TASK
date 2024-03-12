@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class InventoryUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject slotPrefab;
+    [SerializeField] private TextMeshProUGUI money;
+
     private InventorySystem inventorySystem;
     private void Awake()
     {
         InventorySystem.OnUpdateInventory += OnUpdateInventory;
+        Player.OnMoneyChange += UpdateMoney;
     }
     private void OnDestroy()
     {
         InventorySystem.OnUpdateInventory -= OnUpdateInventory;
+        Player.OnMoneyChange -= UpdateMoney;
     }
 
     private void Start()
@@ -30,6 +35,12 @@ public class InventoryUIManager : MonoBehaviour
 
         DrawInventory();
     }
+
+    public void UpdateMoney(int value)
+    {
+        money.text = "$ " + value.ToString();
+    }
+
     private void DrawInventory()
     {
         foreach (InventoryItem item in inventorySystem.inventory)

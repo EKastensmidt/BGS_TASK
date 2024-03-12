@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -5,6 +6,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Action<int> OnMoneyChange;
+
     [SerializeField] private PlayerStats stats;
     [SerializeField] private SpriteRenderer clothingSprite;
 
@@ -17,6 +20,7 @@ public class Player : MonoBehaviour
     public virtual void Start()
     {
         money = stats.StartingMoney;
+        OnMoneyChange?.Invoke(money);
     }
 
     public virtual void Update()
@@ -49,6 +53,8 @@ public class Player : MonoBehaviour
     public void AddMoney(int value)
     {
         money += value;
+
+        OnMoneyChange?.Invoke(money);
     }
 
     public void LooseMoney(int value)
@@ -58,6 +64,8 @@ public class Player : MonoBehaviour
         {
             money = 0;
         }
+
+        OnMoneyChange?.Invoke(money);
     }
 
     public int GetMoney()
