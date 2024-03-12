@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
     protected bool isReadyToInteract = false;
     private int money;
     public PlayerStats Stats { get => stats; set => stats = value; }
+
+    public ShopItem currentItem;
 
     public virtual void Start()
     {
@@ -29,6 +32,18 @@ public class Player : MonoBehaviour
     public void AddClothing(ShopItem item)
     {
         clothingSprite.sprite = item.ItemImage;
+        currentItem = item;
+    }
+
+    public void TryRemoveClothing(ShopItem item)
+    {
+        if (currentItem == null || item.ItemName != currentItem.ItemName)
+        {
+            return;
+        }
+
+        clothingSprite.sprite = null;
+        currentItem = null;
     }
 
     public void AddMoney(int value)

@@ -21,7 +21,7 @@ public class InventoryUIManager : MonoBehaviour
         inventorySystem = FindObjectOfType<InventorySystem>();
     }
 
-    private void OnUpdateInventory()
+    public void OnUpdateInventory()
     {
         foreach (Transform t in transform)
         {

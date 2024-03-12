@@ -31,26 +31,26 @@ public class InventorySystem : MonoBehaviour
         OnUpdateInventory?.Invoke();
     }
 
-    public void Remove(ShopItem referenceData)
-    {
-        if(itemDictionary.TryGetValue(referenceData,out InventoryItem value))
-        {
-            value.RemoveFromStack();
-            if(value.stackSize == 0)
-            {
-                inventory.Remove(value);
-                itemDictionary.Remove(referenceData);
-            }
-        }
-        OnUpdateInventory?.Invoke();
-    }
+    //public void Remove(ShopItem referenceData)
+    //{
+    //    if(itemDictionary.TryGetValue(referenceData,out InventoryItem value))
+    //    {
+    //        value.RemoveFromStack();
+    //        if(value.stackSize == 0)
+    //        {
+    //            inventory.Remove(value);
+    //            itemDictionary.Remove(referenceData);
+    //        }
+    //    }
+    //    OnUpdateInventory?.Invoke();
+    //}
 
-    public InventoryItem Get(ShopItem referenceData)
-    {
-        if(itemDictionary.TryGetValue(referenceData, out InventoryItem value))
-        {
-            return value;
-        }
-        return null;
-    }
+    //public InventoryItem Get(ShopItem referenceData)
+    //{
+    //    if(itemDictionary.TryGetValue(referenceData, out InventoryItem value))
+    //    {
+    //        return value;
+    //    }
+    //    return null;
+    //}
 }
