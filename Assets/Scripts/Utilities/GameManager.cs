@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         player = FindObjectOfType<Player>();
     }
     private void EndGame()
