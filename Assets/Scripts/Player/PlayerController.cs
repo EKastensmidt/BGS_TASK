@@ -11,6 +11,7 @@ public class PlayerController : Player
     private PlayerControls playerControls;
 
     public static Action OnPlayerInteract;
+    public static Action OnPlayerPause;
 
     public Vector3 Movement { get => movement; }
 
@@ -36,6 +37,9 @@ public class PlayerController : Player
 
         playerControls.Gameplay.Interact.performed += Interact;
         playerControls.Gameplay.Interact.canceled += Interact;
+
+        playerControls.Gameplay.Pause.performed += Pause;
+        playerControls.Gameplay.Pause.canceled += Pause;
 
     }
     public override void Start()
@@ -77,6 +81,19 @@ public class PlayerController : Player
         if (context.ReadValue<float>() == 1 && isReadyToInteract)
         {
             OnPlayerInteract?.Invoke();
+        }
+    }
+
+    private void Pause(InputAction.CallbackContext context)
+    {
+        if (!canInteract)
+        {
+            return;
+        }
+
+        if (context.ReadValue<float>() == 1)
+        {
+            OnPlayerPause?.Invoke();
         }
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup gameEndScreen;
+    [SerializeField] private GameObject pauseMenu;
     private Tween fadeTween;
 
     private Player player;
@@ -14,19 +15,23 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         Crush.OnGameEnd += EndGame;
+        PlayerController.OnPlayerPause += OnPause;
     }
 
     private void OnDisable()
     {
         Crush.OnGameEnd -= EndGame;
+        PlayerController.OnPlayerPause -= OnPause;
     }
 
     private void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
     private void EndGame()
     {
+        player.DisableInteraction();
+
         FadeIn(5f);
     }
 
@@ -50,8 +55,15 @@ public class GameManager : MonoBehaviour
         fadeTween.onComplete += onEnd;
     }
 
-    private void GiveUp()
+    public void GiveUp()
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    private void OnPause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
 }

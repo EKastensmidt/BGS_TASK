@@ -102,4 +102,9 @@ public class Player : MonoBehaviour
     {
         canInteract = false;
     }
+
+    public void EnableInteraction()
+    {
+        canInteract = true;
+    }
 }
