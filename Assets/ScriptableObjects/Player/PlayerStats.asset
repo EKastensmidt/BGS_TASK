@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   speed: 7
-  startingMoney: 100000
+  startingMoney: 20
