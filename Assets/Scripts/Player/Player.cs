@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public ShopItem currentItem;
     private CoolGuy coolGuy;
 
+    protected bool canInteract = true;
+
     public virtual void OnEnable()
     {
         //NPCSlot.OnItemPurchase += CheckIfRightItem;
@@ -94,5 +96,10 @@ public class Player : MonoBehaviour
         {
             coolGuy.ChangeItem();
         }   
+    }
+
+    public void DisableInteraction()
+    {
+        canInteract = false;
     }
 }

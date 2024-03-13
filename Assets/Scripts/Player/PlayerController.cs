@@ -57,6 +57,11 @@ public class PlayerController : Player
 
     private void ReadMoveInput(InputAction.CallbackContext context)
     {
+        if (!canInteract)
+        {
+            return;
+        }
+
         var playerInput = context.ReadValue<Vector2>();
         movement.x = playerInput.x;
         movement.y = playerInput.y;
@@ -64,6 +69,11 @@ public class PlayerController : Player
 
     private void Interact(InputAction.CallbackContext context)
     {
+        if (!canInteract)
+        {
+            return;
+        }
+
         if (context.ReadValue<float>() == 1 && isReadyToInteract)
         {
             OnPlayerInteract?.Invoke();
