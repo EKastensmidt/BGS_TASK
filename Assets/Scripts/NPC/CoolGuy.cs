@@ -12,6 +12,10 @@ public class CoolGuy : MonoBehaviour
 
     public ShopItem CurrentItem { get => currentItem; private set => currentItem = value; }
 
+    private bool isGameReadyToEnd = false;
+    public bool IsGameReadyToEnd { get => isGameReadyToEnd; }
+
+
     private void OnEnable()
     {
         
@@ -39,7 +43,7 @@ public class CoolGuy : MonoBehaviour
 
         if (currentItem == null)
         {
-            //GAME END
+            isGameReadyToEnd = true;
         }
         else
         {

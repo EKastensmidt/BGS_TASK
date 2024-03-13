@@ -1,22 +1,15 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class Crush : InteractableObject, IInteractable
+public class DiceGameNPC : InteractableObject, IInteractable
 {
-    public static Action OnGameEnd;
-
-    [SerializeField] private TextMeshProUGUI dialog;
-
-    private CoolGuy coolGuy;
-
+    [SerializeField] private GameObject diceGame;
     public bool CanInteract { get; set; }
 
     public override void Start()
     {
-        coolGuy = FindObjectOfType<CoolGuy>();
+        base.Start();
     }
 
     public override void Interact()
@@ -28,21 +21,14 @@ public class Crush : InteractableObject, IInteractable
 
         base.Interact();
 
-        if (coolGuy.IsGameReadyToEnd)
-        {
-            OnGameEnd?.Invoke();
-        }
-        else
-        {
-            dialog.text = coolGuy.CurrentItem.CrushFlavourText;
-        }
+        diceGame.SetActive(true);
     }
 
     public override void OnInteractionEnd()
     {
         base.OnInteractionEnd();
 
-        dialog.text = "";
+        diceGame.SetActive(false);
         CanInteract = false;
     }
 
