@@ -29,7 +29,7 @@ public class DiceGameManager : MonoBehaviour
 
     public void OnBetDone()
     {
-        if(betAmount == 0)
+        if(betAmount == 0 || player.GetMoney() < betAmount)
         {
             return;
         }
