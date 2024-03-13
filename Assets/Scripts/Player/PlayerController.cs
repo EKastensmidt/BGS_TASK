@@ -69,6 +69,17 @@ public class PlayerController : Player
         var playerInput = context.ReadValue<Vector2>();
         movement.x = playerInput.x;
         movement.y = playerInput.y;
+
+        if(movement != Vector3.zero)
+        {
+            animator.SetBool("isMoving",true);
+            animator.SetFloat("X", movement.x);
+            animator.SetFloat("Y", movement.y);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
     }
 
     private void Interact(InputAction.CallbackContext context)

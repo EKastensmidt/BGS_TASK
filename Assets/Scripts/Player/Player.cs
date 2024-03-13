@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     protected bool isReadyToInteract = false;
     private int money;
+
+    protected Animator animator;
     public PlayerStats Stats { get => stats; set => stats = value; }
 
     public ShopItem currentItem;
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
     {
         money = stats.StartingMoney;
         OnMoneyChange?.Invoke(money);
+        animator = GetComponentInChildren<Animator>();
 
         coolGuy = FindObjectOfType<CoolGuy>();
     }
